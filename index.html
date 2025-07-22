@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mail Security Game</title>
+  <style rel="stylesheet" href="stryle.css" />
+</head>
+<body>
+  <div class="character"></div>
+  <div class="scenario" id="scenarioText">
+    You receive a suspicious email with an attachment claiming to be an invoice. What do you do?
+  </div>
+  <div class="choices">
+    <button onclick="selectOption(true)">Do not open it and report it</button>
+    <button onclick="selectOption(false)">Open and download the invoice</button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    function selectOption(isSafe) {
+      const result = document.getElementById("result");
+      if (isSafe) {
+        result.innerText = "Correct! You avoided a potential phishing scam.";
+        result.style.color = "#4CAF50";
+      } else {
+        result.innerText = "Incorrect. That was a phishing attack and you got infected.";
+        result.style.color = "#f44336";
+      }
+    }
+  </script>
+</body>
+</html>
