@@ -43,3 +43,16 @@ export const getHappiness = () => parseInt(localStorage.getItem('happiness') || 
 export const setSpeed = (val) => localStorage.setItem('speed', val);
 export const setResources = (val) => localStorage.setItem('resources', val);
 export const setHappiness = (val) => localStorage.setItem('happiness', val);
+
+export const getChoseVirtual = () => (localStorage.getItem('choseVirtual') ? true : false);
+
+export const setChoseVirtual = (val) => localStorage.setItem('choseVirtual', val);
+
+// For virtual mailing progress
+export const getFoundPersonalEmail = () => (localStorage.getItem('foundPersonalEmail') ? true : false);
+
+export const setFoundPersonalEmail = (val) => localStorage.setItem('foundPersonalEmail', val);
+
+export const getGotMimAttackEmail = () => (localStorage.getItem('foundPersonalEmail') ? true : false);
+
+export const setGotMimAttackEmail = (val) => localStorage.setItem('foundPersonalEmail', val);

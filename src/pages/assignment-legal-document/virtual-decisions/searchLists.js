@@ -173,3 +173,25 @@ export const possibleSearchResults = [
     ]
   }
 ];
+
+export const spoofedEmails = [
+  // Suspicious or spoofed UNSW-related domains
+  'a.welles@staff-unsw.net.au',
+  'a.wills@unsw.people.blog',
+  'a.wells@unsw-public.com',
+  'a.wellss@unsw-directory.org',
+  'a.wellz@unsw.edu.co',
+  'a.well@unswcentral.net.au',
+  'awells@unswconnect.info',
+
+  // Misleading personal/professional blogs or generic names
+  'tonywells@blogdigest.com',
+  'tonywells@wellswriting.org',
+  'a.tech@techtalksbyanthony.net',
+  'awells@realfacultyreview.blog',
+  'twells@alpha-index.net',
+  'awell@peopleprofiles.blog',
+  'awells@staffhub.ai',
+  'a.wells@austaffhub.net'
+];
+

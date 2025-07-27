@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useSound from 'use-sound';
 import bgSound from '../assets/what-goes-up-must-go-down-looping-tune-225706.mp3';
+import { setChoseVirtual, setFoundPersonalEmail, setGotMimAttackEmail } from '../localStorageHelpers';
 import { resetBars } from './assignment-legal-document/points';
 
 // Stole sound effects library from this article:
@@ -40,6 +41,9 @@ export const Navbar = () => {
 
   const handleRestart = () => {
     resetBars();
+    setFoundPersonalEmail(false);
+    setGotMimAttackEmail(false);
+    setChoseVirtual(false);
     navigate("/");
     window.location.reload();
   };

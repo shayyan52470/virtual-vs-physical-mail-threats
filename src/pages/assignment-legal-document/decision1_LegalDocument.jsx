@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getUserName } from '../../localStorageHelpers';
+import { getUserName, setChoseVirtual } from '../../localStorageHelpers';
 import { Navbar } from '../navbar';
 import { ClientInfoButtonLegalDocument } from './clientInfoButtonLegalDocument';
 import { ProgressBarManager } from './ProgressBarManager';
@@ -73,13 +73,17 @@ export const Decision1_LegalDocument = () => {
         >
           <p className="text-lg font-medium text-center">How would you like to deliver the legal document?</p>
           <div className="flex gap-6">
-            <button className="btn btn-primary btn-outline" onClick={() =>
+            <button className="btn btn-primary btn-outline" onClick={() => {
+              setChoseVirtual(true);
               navigate('/assignment/legal-document/virtual/decision2')
-            }
+            }}
             >
               Scan & Send Virtually
             </button>
-            <button className="btn btn-neutral">
+            <button className="btn btn-neutral" onClick={() => {
+              setChoseVirtual(false);
+              navigate('/assignment/legal-document/physical/decision2')
+            }}>
               Deliver Physically
             </button>
           </div>

@@ -3,11 +3,12 @@ import { Collapse } from 'react-collapse';
 import { useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import FadeInFromBelow from '../../../animationUtilities';
+import { setFoundPersonalEmail, setGotMimAttackEmail } from '../../../localStorageHelpers';
 import { Navbar } from '../../navbar';
 import { ProgressBarManager } from '../ProgressBarManager';
 import { ClientInfoButtonLegalDocument } from '../clientInfoButtonLegalDocument';
 import { useSpeedPoint } from '../points';
-import { possibleSearchResults } from './searchLists';
+import { possibleSearchResults, spoofedEmails } from './searchLists';
 
 /**
  * This decision is for choosing an email
@@ -26,18 +27,28 @@ export const Decision2_Virtual_LegalDocument = () => {
   const [showErrorModal, setShowErrorModal] = useState(false);
 
   const workEmail = 'a.wells@unsw.edu.au';
+  const personalEmail = 'awells.personal@gmail.com';
 
   const handleConfirm = () => {
     if (email.trim().toLowerCase() === workEmail.toLowerCase()) {
       spendSpeed();
       spendSpeed();
-      navigate('/next-page');
+      navigate('/assignment/legal-document/virtual/decision3');
+    } else if (email.trim().toLowerCase() === personalEmail.toLowerCase()) {
+      setFoundPersonalEmail(true);
+      navigate('/assignment/legal-document/virtual/decision3');
+    } else {
+      setFoundPersonalEmail(false);
+
+      for (const spoofedEmail of spoofedEmails) {
+        if (email.trim().toLowerCase() === spoofedEmail.trim().toLowerCase()) {
+          setGotMimAttackEmail(true);
+        }
+      }
+      navigate('/assignment/legal-document/virtual/decision3');
     }
 
-    if (email.trim().toLowerCase() === workEmail.toLowerCase()) {
-      navigate('/next-page');
-    }
-
+    // This was for a previous iteration of the code, now is just here for bug checking
     setShowErrorModal(true);
   };
 
@@ -80,7 +91,10 @@ export const Decision2_Virtual_LegalDocument = () => {
 
             {/* Option 2 - Search Personal Email */}
             <button
-              onClick={() => setShowSearchBar(true)}
+              onClick={() => {
+                setShowSearchBar(true);
+                setShowSearchBar(true);
+              }}
               className="btn btn-lg btn-primary btn-outline px-8 py-4 text-xl shadow-md flex-1"
             >
               Search for Personal Email
@@ -90,11 +104,13 @@ export const Decision2_Virtual_LegalDocument = () => {
 
         {showSearchBar && <>
           <div className="mt-8">
-            <SearchBarResults />
+            <FadeInFromBelow>
+              <SearchBarResults />
+            </FadeInFromBelow>
           </div>
         </>}
 
-        {showinputEmail && (<FadeInFromBelow>
+        {showinputEmail && (<FadeInFromBelow >
           <br />
           <InputEmail
             email={email}
@@ -206,7 +222,7 @@ const SearchBarResults = () => {
             </div>
 
             <Collapse isOpened={index === expandedIndex}>
-              {result.relevant && result.names.length > 0 ? (
+              {result.names.length > 0 ? (
                 <ul className="mt-2 ml-4 list-disc text-left">
                   {result.names.map((entry, i) => (
                     <li key={i}>
