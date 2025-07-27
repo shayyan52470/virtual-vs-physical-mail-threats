@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 import FadeInFromBelow from "../../animationUtilities";
 import { Navbar } from "../navbar";
 
-export const ThreatActorsPage = () => {
+export const IntroToBadActors = () => {
   const [clickedActors, setClickedActors] = useState([]);
   const navigate = useNavigate();
 
@@ -13,10 +13,20 @@ export const ThreatActorsPage = () => {
       id: "hackers",
       label: "Hackers",
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M3 3h18v18H3z" />
-          <path d="M9 9h6v6H9z" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <path d="M8 21h8M12 17v4" />
         </svg>
+
       ),
       description: "Hackers seek to breach systems, often motivated by curiosity, money, or political goals.",
       example: "An anonymous hacker leaks millions of user passwords from a social media site."
@@ -25,10 +35,26 @@ export const ThreatActorsPage = () => {
       id: "companies",
       label: "Companies",
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M4 4h16v16H4z" />
-          <path d="M8 4v16M16 4v16" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 21V7a1 1 0 0 1 1-1h4V3h8v3h4a1 1 0 0 1 1 1v14" />
+          <path d="M3 21h18" />
+          {/* <path d="M9 21V9" /> */}
+          {/* <path d="M15 21V9" /> */}
+          <path d="M9 10h6" />
+          <path d="M9 13h6" />
+          <path d="M9 16h6" />
+          <path d="M9 19h6" />
         </svg>
+
       ),
       description: "Companies may act maliciously to sabotage competitors or gather unauthorized data.",
       example: "A rival firm launches spyware to track competitor product development."
@@ -37,9 +63,25 @@ export const ThreatActorsPage = () => {
       id: "governments",
       label: "Governments",
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M2 12h20" />
-          <path d="M6 12V6h12v6" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 11h18" />
+          <path d="M5 11V7h14v4" />
+          <path d="M2 21h20" />
+          <path d="M6 21v-6" />
+          <path d="M10 21v-6" />
+          <path d="M14 21v-6" />
+          <path d="M18 21v-6" />
+          <path d="M12 3v4" />
+          <path d="M9 7h6" />
         </svg>
       ),
       description: "Governments can spy or restrict access to information for national security or control.",
@@ -49,10 +91,20 @@ export const ThreatActorsPage = () => {
       id: "scammers",
       label: "Scammers",
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M8 15h8M9 9h6" />
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M12 2v10a4 4 0 1 1-4 4" />
+          <path d="M16 6a4 4 0 1 0-8 0" />
         </svg>
+
       ),
       description: "Scammers exploit individuals through fake offers or phishing to steal money or info.",
       example: "A phishing email pretends to be a bank, tricking someone into giving away login details."
@@ -61,7 +113,14 @@ export const ThreatActorsPage = () => {
       id: "civilians",
       label: "Civilians",
       icon: (
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg 
+          width="40" 
+          height="40" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2"
+        >
           <circle cx="12" cy="7" r="4" />
           <path d="M5.5 21a7.5 7.5 0 0 1 13 0" />
         </svg>

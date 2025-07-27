@@ -108,7 +108,7 @@ export const IntroToCIANA = () => {
                 While CIANA provides an essential framework for securing systems, implementing every component rigorously can often lead to inefficiencies. Too many security checks or authentication layers can create friction and slow down workflows.
               </p>
               <p>
-                This friction causes users to find workarounds or abandon best practices altogether, believing security is a hindrance rather than a necessity. Balancing ease of use with robust protection remains one of cybersecurity’s greatest challenges.
+                This friction causes users to find workarounds or abandon best practices altogether, believing security is a hindrance rather than a necessity. Balancing ease of use with robust protection remains one of cybersecurity's greatest challenges.
               </p>
             </div>
 
@@ -118,12 +118,12 @@ export const IntroToCIANA = () => {
               <ul>
                 <li>CIANA is very comprehensive and more can be found here: 
                   <a href="https://www.hoppersroppers.org/security/Risk/0-CIANA.html" target="_blank" rel="noopener noreferrer" className="link">
-                    Hoppers Roppers – CIANA Breakdown
+                    Hoppers Roppers - CIANA Breakdown
                   </a> 
                 </li>
                 <li>Many institutes also teach CIA, however it is not as encompassing: 
                   <a href="https://informationsecurity.wustl.edu/guidance/confidentiality-integrity-and-availability-the-cia-triad/" target="_blank" rel="noopener noreferrer" className="link">
-                    Washington University – CIA Triad Overview
+                    Washington University - CIA Triad Overview
                   </a>
 
                 </li>

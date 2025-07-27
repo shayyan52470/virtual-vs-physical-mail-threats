@@ -32,6 +32,7 @@ export const Dashboard = () => {
       <h1 className="text-6xl text-center font-mono">
         {/* https://www.npmjs.com/package/typewriter-effect */}
         <Typewriter
+          options={{delay: 50,}}
           onInit={(typewriter) => {
             typewriter.typeString('Welcome to this')
               .start()
@@ -60,6 +61,7 @@ export const Dashboard = () => {
         <br />
 
         {(confirmSubmission && <Typewriter
+          options={{delay: 50,}}
           onInit={(typewriter) => {
             typewriter.typeString('Great! Nice to meet you ' + getUserName())
               .start()

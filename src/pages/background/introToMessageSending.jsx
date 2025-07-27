@@ -147,6 +147,7 @@ export const IntroToMessageSending = () => {
       <div className="p-10 space-y-10 font-mono max-w-3xl">
         <h1 className="text-3xl font-bold">
           <Typewriter
+            options={{delay: 50,}}
             onInit={(typewriter) => {
               typewriter.typeString('Let\'s try to understand what is sending mail.')
                 .start()
