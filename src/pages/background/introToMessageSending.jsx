@@ -149,7 +149,7 @@ export const IntroToMessageSending = () => {
           <Typewriter
             options={{delay: 50,}}
             onInit={(typewriter) => {
-              typewriter.typeString('Let\'s try to understand what is sending mail.')
+              typewriter.typeString('Let\'s try to understand what is sending mail?')
                 .start()
                 .pauseFor(1000)
                 .typeString('<br />Whenever we send mail')
@@ -175,12 +175,35 @@ export const IntroToMessageSending = () => {
           </FadeInFromBelow>)}
         {showRestOfContent && (<FadeInFromBelow>
           <p className="text-xl">
-            It's a message with information that goes from one location to another. We have multiple people involved.
+          <Typewriter
+            options={{delay: 50,}}
+            onInit={(typewriter) => {
+              typewriter.typeString('It\'s a message with information that goes from one location to another. We have multiple people involved.')
+                .start()
+                .typeString('<br /><br /><br />At the bare minimum they are at least two.')
+                .pauseFor(500)
+                .callFunction(() => {
+                  const cursor = document.querySelector('.Typewriter__cursor');
+                  if (cursor) {
+                    cursor.style.display = 'none';
+                  }
+
+                  setShowAnimation(true);
+                })
+                .pauseFor(2000)
+                .callFunction(() => {
+                  setShowRestOfContent(true);
+                });
+            }}
+          />
           </p>
+            
+          
 
           <h2 className="text-2xl font-semibold">
-            At the bare minimum they are at least two. Click on both to learn more:
+             
           </h2>
+          <h3>Click on both to learn more:</h3>
 
           {/* Flexbox with sender/receiver cards */}
           <div className="flex justify-around gap-10">

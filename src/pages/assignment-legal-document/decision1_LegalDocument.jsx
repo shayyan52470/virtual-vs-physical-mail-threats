@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import FadeInFromBelow from '../../animationUtilities';
+import { useNavigate } from 'react-router-dom';
 import { getUserName } from '../../localStorageHelpers';
 import { Navbar } from '../navbar';
 import { ClientInfoButtonLegalDocument } from './clientInfoButtonLegalDocument';
 import { ProgressBarManager } from './ProgressBarManager';
 
 export const Decision1_LegalDocument = () => {
+  const navigate = useNavigate();
   const [showChoices, setShowChoices] = useState(false);
 
   useEffect(() => {
@@ -72,7 +73,10 @@ export const Decision1_LegalDocument = () => {
         >
           <p className="text-lg font-medium text-center">How would you like to deliver the legal document?</p>
           <div className="flex gap-6">
-            <button className="btn btn-primary btn-outline">
+            <button className="btn btn-primary btn-outline" onClick={() =>
+              navigate('/assignment/legal-document/virtual/decision2')
+            }
+            >
               Scan & Send Virtually
             </button>
             <button className="btn btn-neutral">
@@ -83,9 +87,7 @@ export const Decision1_LegalDocument = () => {
       )}
       
     </div>
-    <FadeInFromBelow delay={3.5}>
-        <ClientInfoButtonLegalDocument />
-    </FadeInFromBelow>
+    <ClientInfoButtonLegalDocument />
     <ProgressBarManager />
   </>);
 };
