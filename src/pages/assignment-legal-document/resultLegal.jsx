@@ -12,6 +12,8 @@ import {
   getUsedWorkEmail,
 } from "../../localStorageHelpers";
 import { Navbar } from "../navbar";
+import { ClientInfoButtonLegalDocument } from "./clientInfoButtonLegalDocument";
+import { ProgressBarManager } from "./ProgressBarManager";
 
 export const ResultsPageLegal = () => {
   const speed = getSpeed();
@@ -61,6 +63,9 @@ export const ResultsPageLegal = () => {
 
         {/* CIANA Final Verdict */}
         <FinalVerdict />
+
+        <ClientInfoButtonLegalDocument />
+        <ProgressBarManager />
       </div>
     </>
   );
@@ -161,5 +166,38 @@ const PasswordFeedback = ({ securePassword }) => (
         ❌ Your password was weak and cracked. Attackers accessed the email system.
       </p>
     )}
+  </>
+);
+
+const StorageFeedback = ({ choseVirtual, securedComms }) => (
+  <>
+    <h2 className="text-2xl mt-6 mb-2 font-bold">🗄️ Storage Decisions</h2>
+    {!securedComms ? (
+      !choseVirtual ? (
+        <p className="text-info">You used physical mail, which preserves non-repudiation by default.</p>
+      ) : (
+        <p className="text-error">
+          ❌ You chose to delete the email after sending it.
+          While this protects <strong>Confidentiality</strong>, it violates <strong>Non-repudiation</strong>.
+        </p>
+      )
+    ) : (
+      <p className="text-success">
+        ✅ You stored the email securely, allowing later verification and dispute resolution.
+      </p>
+    )}
+  </>
+);
+
+const FinalVerdict = () => (
+  <>
+    <h2 className="text-2xl mt-6 mb-2 font-bold">📬 Final Verdict</h2>
+    <p className="mb-4">
+      Even with virtual delivery, the <strong>receiver may not read or acknowledge the email</strong>.
+      They could claim they never saw it, or it went to spam — harming <strong>Non-repudiation</strong>.
+      This is why physical mail handed in directly remains superior for legal delivery.
+      It also demonstrates how sometimes physical delivery of information can be more secure in rare circumstances like these,
+      showing the importance of this infrastructure.
+    </p>
   </>
 );

@@ -94,7 +94,7 @@ export const Decision2_Virtual_LegalDocument = () => {
             <button
               onClick={() => {
                 setShowSearchBar(true);
-                setShowSearchBar(true);
+                setShowInputEmail(true);
               }}
               className="btn btn-lg btn-primary btn-outline px-8 py-4 text-xl shadow-md flex-1"
             >
