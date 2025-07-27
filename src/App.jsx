@@ -7,6 +7,7 @@ import './App.css'
 import { AssignmentBriefLegalDocument } from './pages/assignment-legal-document/assignmentBriefLegalDocument'
 import { ClientInformationLegalDocuments } from './pages/assignment-legal-document/clientInformationLegalDocument'
 import { Decision1_LegalDocument } from './pages/assignment-legal-document/decision1_LegalDocument'
+import { ResultsPageLegal } from './pages/assignment-legal-document/resultLegal'
 import { Decision2_Virtual_LegalDocument } from './pages/assignment-legal-document/virtual-decisions/decision2VirtualLegalDocument'
 import { Decision3_Virtual_LegalDocument } from './pages/assignment-legal-document/virtual-decisions/decision3VirtualLegalDocument'
 import { IntroToBadActors } from './pages/background/introToBadActors'
@@ -33,6 +34,8 @@ function App() {
         <Route path="/assignment/legal-document/virtual/decision2" element={<Decision2_Virtual_LegalDocument />} />
 
         <Route path="/assignment/legal-document/virtual/decision3" element={<Decision3_Virtual_LegalDocument />} />
+
+        <Route path="/assignment/legal-document/result" element={<ResultsPageLegal />} />
       </Routes>
     </Router>
   )

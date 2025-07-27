@@ -71,7 +71,7 @@ export const Navbar = () => {
         <div className="flex-none">
           <button
             className="btn btn-square btn-ghost"
-            onClick={() => toggleSound()}
+            onClick={() => {toggleSound()}}
           >
             {isMuted ? (
               // Muted icon

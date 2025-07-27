@@ -1,4 +1,4 @@
-
+const parseBool = (text) => text == "true" ? true : false;
 
 /**
  * Gets user Token
@@ -44,15 +44,42 @@ export const setSpeed = (val) => localStorage.setItem('speed', val);
 export const setResources = (val) => localStorage.setItem('resources', val);
 export const setHappiness = (val) => localStorage.setItem('happiness', val);
 
-export const getChoseVirtual = () => (localStorage.getItem('choseVirtual') ? true : false);
+export const getChoseVirtual = () => parseBool(localStorage.getItem('choseVirtual'));
 
 export const setChoseVirtual = (val) => localStorage.setItem('choseVirtual', val);
 
 // For virtual mailing progress
-export const getFoundPersonalEmail = () => (localStorage.getItem('foundPersonalEmail') ? true : false);
+export const getFoundPersonalEmail = () => parseBool(localStorage.getItem('foundPersonalEmail'));
 
 export const setFoundPersonalEmail = (val) => localStorage.setItem('foundPersonalEmail', val);
 
-export const getGotMimAttackEmail = () => (localStorage.getItem('foundPersonalEmail') ? true : false);
+export const getUsedWorkEmail = () => parseBool(localStorage.getItem('usedWorkEmail'));
 
-export const setGotMimAttackEmail = (val) => localStorage.setItem('foundPersonalEmail', val);
+export const setUsedWorkEmail = (val) => localStorage.setItem('usedWorkEmail', val);
+
+export const getGotMimAttackEmail = () => parseBool(localStorage.getItem('gotMimAttackEmail'));
+
+export const setGotMimAttackEmail = (val) => localStorage.setItem('gotMimAttackEmail', val);
+
+// Decision 3 Virtual
+export const getChosePersonalEmail = () => parseBool(localStorage.getItem('chosePersonalEmail'));
+
+export const setChosePersonalEmail = (val) => localStorage.setItem('chosePersonalEmail', val);
+
+export const getChoseNewEmail = () => parseBool(localStorage.getItem('choseNewEmail'));
+
+export const setChoseNewEmail = (val) => localStorage.setItem('choseNewEmail', val);
+
+export const getChoseNewWorkEmail = () => parseBool(localStorage.getItem('choseNewWorkEmail'));
+
+export const setChoseNewWorkEmail = (val) => localStorage.setItem('choseNewWorkEmail', val);
+
+export const getSecurePassword = () => parseBool(localStorage.getItem('hadSecurePassword'));
+
+
+export const setSecurePassword = (val) => localStorage.setItem('hadSecurePassword', val);
+
+export const getSecuredCommunications = () => parseBool(localStorage.getItem('hadSecuredCommunications'));
+
+
+export const setSecuredCommunications = (val) => localStorage.setItem('hadSecuredCommunications', val);

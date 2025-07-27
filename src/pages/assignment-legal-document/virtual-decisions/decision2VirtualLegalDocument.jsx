@@ -3,7 +3,7 @@ import { Collapse } from 'react-collapse';
 import { useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import FadeInFromBelow from '../../../animationUtilities';
-import { setFoundPersonalEmail, setGotMimAttackEmail } from '../../../localStorageHelpers';
+import { setFoundPersonalEmail, setGotMimAttackEmail, setUsedWorkEmail } from '../../../localStorageHelpers';
 import { Navbar } from '../../navbar';
 import { ProgressBarManager } from '../ProgressBarManager';
 import { ClientInfoButtonLegalDocument } from '../clientInfoButtonLegalDocument';
@@ -33,6 +33,7 @@ export const Decision2_Virtual_LegalDocument = () => {
     if (email.trim().toLowerCase() === workEmail.toLowerCase()) {
       spendSpeed();
       spendSpeed();
+      setUsedWorkEmail(true);
       navigate('/assignment/legal-document/virtual/decision3');
     } else if (email.trim().toLowerCase() === personalEmail.toLowerCase()) {
       setFoundPersonalEmail(true);
