@@ -1,3 +1,12 @@
+# My COMP6441 Assignment Submission for 2025
+This is my best attempt with the short time that I had.
+I was working on a bunch of stuff before this and had to get this up and running quickly. I had some of the code and boilerplate done before this code was uploaded.
+So there will be a disconnect.
+
+The webpage and stuff has been produced, but I prefer to run it using npm run dev to make life easier...
+
+Music and stuff can be changed by changing out the file. I just chose something random for now but I am sure there is a lot more I could have done.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
