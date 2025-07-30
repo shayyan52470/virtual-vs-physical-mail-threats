@@ -7,6 +7,10 @@ The webpage and stuff has been produced, but I prefer to run it using npm run de
 
 Music and stuff can be changed by changing out the file. I just chose something random for now but I am sure there is a lot more I could have done.
 
+#to run the site
+1. first do `npm i`
+2. Then run `npm run dev` 
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
